@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Ventas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+    
+    
+</head>
+
+<body>
+
+    <header class="m-0 align-content-between vh-75  ">
+
+        <nav class="navbar navbar-expand-md  fixed-top  w-100 " style="background-color: #c9303d; max-height: 400px; ">
+            <div class="container-fluid collapse " style="color: #EAE7F1;" title="Configuracion">
+                <a class="navbar-brand w-25 " href="#" style="color: #EAE7F1; max-width: 18%;">
+                    <!-- Logo -->
+                    <img src="img/LogoIlustracionLateral.png" class="img-fluid   "
+                        alt="logo_surtimax" style="max-height: 90px;" title="Inicio">
+                </a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- barnav -->
+                <div class="collapse navbar-collapse  justify-content-end " id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active  " aria-current="page" href="#" style="color: #EAE7F1 "">
+                        
+                    <div title="Configuración">
+                        <button class=" btn btn-outline-warning border-0 w-100 my-1 ">
+                        <svg xmlns=" http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                </svg>
+                                </button>
+                </div>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #EAE7F1">
+                        <div title="Comentarios">
+                            <button class="btn btn-outline-warning border-0 w-100 my-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div style="color: #eae7f1;" title="Inicio">
+                            <button class="btn btn-outline-warning border-0 w-100 my-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    
+                        
+                    
+                        <div class="nav-link tt dropdown" href="#" style="color: #eae7f1;" title="Perfil">
+                            <button class="btn btn-outline-warning border-0 w-100 my-1 dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false" id="simpleDropdown">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                  </svg>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" >
+                                <li><a href="404.html" class="dropdown-item">Perfil</a>
+                                    <a href="500.html" class="dropdown-item">Ayuda</a>
+                                    <a href="index.html" data-bs-toggle="modal" data-bs-target="#miModal">
+                                        <div class="row p-1" >
+                                            <div class="col">
+                                                <button class="btn btn-outline-danger w-100 my-1" type="button" >
+                                                    <div class="row align-items-center" >
+                                                        <div class="col-2" >
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-10">
+                                                            Salir
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            </div>                                       
+                                        </div>
+                                    </a>
+                                    
+                                    
+                                </li>
+                            </ul>
+                            
+                            
+                        </div>
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                    
+                    
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- modal de salida -->
+
+    <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="miModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-light">
+                    <h5 class="modal-title " id="modalTitle">Cuidado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row">    
+                    <div class="modal-body d-flex align-content-end col-6 justify-content-center">
+                        <img src="img/MAX3.png" class="img-fluid rounded-circle pt-0  m-auto  "
+                        style="max-width: 35%;" alt="max3">
+                    </div>
+                    <div class="col-6 align-items-center">
+                        <h3 class="position-absolute m-3 fw-bold "> Estas seguro que deseas cerrar sesión?</h3>
+                    </div>
+                </div>    
+                <div class="modal-footer border-0">
+                    <a href="index.html">
+                    <button type="button" class="btn btn-outline-success " data-bs-dismiss="modal" >Aceptar</button>
+                </a>
+                
+                    <button type="button" class="btn btn-outline-danger " data-bs-dismiss="modal" aria-label="Close" >Cancelar</button>
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- modal agregar usuario -->
+
+    <div class="modal fade" id="agregarUsu" tabindex="-1" aria-hidden="true" aria-labelledby="agregarUsu">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-light">
+                    <h3 class="modal-title fs-3 fw-bold" id="modalTitle">Agregar</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row ">
+                    <h3 class="ms-4">Información Personal</h3>
+                    <hr>
+                    <form action="">
+                        <div class="row">
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Nombres" required>
+                                </div>
+                            </div>
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Apellidos" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text  ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+                                            <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+                                          </svg>
+                                    </div>
+                                    <div >
+                                        <select class="form-select pb-2" id="tipoDoc" >
+                                          <option selected class="form-select">Elija una Opción</option>
+                                          <option value="1">Cédula</option>
+                                          <option value="2">Cédula de extranjería</option>
+                                          <option value="3">Otro</option>
+                                        </select>
+                                        
+                                      </div>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+                                            <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+                                          </svg>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Número de documento" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                          </svg>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Teléfono" required>
+                                </div>
+                            </div>
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                          </svg>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Dirección" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text  ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                                            <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                                            <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
+                                        </svg>
+                                    </div>
+                                    <div >
+                                        <select class="form-select pb-2" id="cargoSelect" title="Cargo">
+                                          <option selected class="form-select">-Cargo- </option>
+                                          <option value="1">Cajero</option>
+                                          <option value="2">Administrador</option>
+                                          <option value="3">Otro</option>
+                                        </select>
+                                        
+                                      </div>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-5 m-3">
+                                <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                                    <div class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+                                            <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+                                          </svg>
+                                    </div>
+                                    <input type="date" class="form-control" placeholder="" required>
+                                </div>
+                            </div>
+                        </div>
+                    </form>    
+                </div>
+                <hr>
+                <h3 class="ms-4">Usuario y contraseña</h3>
+                <div class="row">
+                    <div class="col-5 m-3">
+                        <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                            <div class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
+                                  </svg>
+                            </div>
+                            <input type="email" class="form-control" placeholder="e-mail" required>
+                        </div>
+                    </div>
+                    <div class="col-5 m-3">
+                        <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                            <div class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
+                                  </svg>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Crear Usuario" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5 m-3">
+                        <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                            <div class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
+                                  </svg>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class="col-5 m-3">
+                        <div class="mb-4 text-center fw-semibold fs-3 input-group">
+                            <div class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
+                                  </svg>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Confirmar contraseña" required>
+                        </div>
+                    </div>
+                </div>
+
+                    
+                <div class="modal-footer border-0 bg-body">
+                    <a href="index.html">
+                    <button type="button" class="btn btn-outline-success " data-bs-dismiss="modal" >Crear</button>
+                </a>
+                </div>    
+            </div>  
+            
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- espaciado despues de la barra superior -->
+    <div class="row m-5 d-none d-md-block"></div>
+    <div class="row m-2"></div>
+    
+
+    <!-- barra lateral -->
+
+    
+    <div class="main-container pt-3 d-flex vh-75 " style="height: 94.5vh;">
+        <div class="sidebar" id="side_nav">
+            <div class="header-box mt-5 pt-2 px-2 pt-3 pb-4">
+                <h1 class="fs-4 p-0 text-light"><span class="bg-warning text-black rounded d-none d-lg-inline-flex shadow px-2 me-2">Merck-Fonti</span>Menú</h1>
+                <button class="btn d-md-none d-block close-btn px1 py-0 text-white">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            
+            
+            <div class="row p-1 m-1 mt-5">
+                <div class="col">
+                    <a href="dashboard.html">
+                        <button class="btn btn-outline-light border-0 w-100 my-1">
+                            <div class="row align-items-center">
+                                <div class="col-2 px-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-clipboard-data-fill" viewBox="0 0 16 16">
+                                        <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1ZM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V8Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"/>
+                                    </svg>
+                                </div>
+                                <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                    Tablero Principal
+                                </div>
+                            </div>
+                        </button>
+                    </a>    
+                </div>
+            </div>
+
+            <div class="row p-1 m-1">
+                <div class="col">
+                    <a href="ventas.html">
+                    <button class="btn btn-outline-light border-0 w-100 my-1">
+                        <div class="row align-items-center">
+                            <div class="col-2 px-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                    <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                    <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                                  </svg>
+                            </div>
+                            <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                Ventas
+                            </div>
+                        </div>
+                    </button>
+                </a>
+                </div>
+            </div>
+            
+                    
+            <div class="row p-1 m-1">
+                <div class="col">
+                    <button class="btn btn-outline-light border-0 w-100 my-1">
+                        <div class="row align-items-center">
+                            <div class="col-2 px-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                  </svg>
+                            </div>
+                            <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                Compras
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="row p-1 m-1">
+                <div class="col">
+                    <button class="btn btn-outline-light border-0  w-100 my-1">
+                        <div class="row align-items-center">
+                            <div class="col-2 px-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                    <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                                    <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                                  </svg>
+                            </div>
+                            <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                Usuarios
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="row p-1 m-1">
+                <div class="col">
+                    <button class="btn btn-outline-light border-0 w-100 my-1">
+                        <div class="row align-items-center">
+                            <div class="col-2 px-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-boxes" viewBox="0 0 16 16">
+                                    <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
+                                  </svg>
+                            </div>
+                            <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                Inventario
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="row p-1 m-1">
+                <div class="col">
+                    <a href="reportes.html">
+                    <button class="btn btn-outline-light border-0 w-100 my-1" >
+                        <div class="row align-items-center" >
+                            <div class="col-2 px-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                    <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                                  </svg>
+                            </div>
+                            <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                Reportes
+                            </div>
+                        </div>
+                    </button>
+                </a>
+                </div>
+            </div>
+
+            
+                
+            
+            <div class="row p-1 m-1">
+                <div class="col">
+                    <button class="btn btn-outline-danger border-0 fw-bolder border border-3 border-danger w-100 my-1" data-bs-toggle="modal" data-bs-target="#miModal">
+                        <div class="row align-items-center">
+                            <div class="col-2 px-2 bg-gradient ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                </svg>
+                            </div>
+                            <div class="col-10 text-start fw-bolder fs-5 d-none d-lg-block">
+                                Salir
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        <div class="content">
+
+        </div>
+    </div>
+
+    <!-- botones -->
+    
+    <!-- contenido -->
+<div class="container-fluid mt-4 mb-0">
+        <div class="row container-fluid mt-4 mb-0 ps-5 pe-0">
+            
+                            
+        <label for="inputPassword5" class="form-label col-10 fs-3  fw-bolder">Usuarios</label>
+            <div class="row ">
+                
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row p-1 m-1">
+                                <div class="col">
+                                    <button class="btn btn-outline-success  w-100 my-1" data-bs-toggle="modal" data-bs-target="#agregarUsu">
+                                        <div class="row align-items-center">
+                                            <div class="col-2 px-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                                  </svg>
+                                            </div>
+                                            <div class="col-10 text-center fs-5 fw-bold d-none d-lg-block">
+                                                Agregar Usuario
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row p-1 m-1">
+                                <div >
+                                    <button class="btn btn-outline-primary  w-100 my-1">
+                                        <div class="row align-items-center">
+                                            <div class="col-2 px-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                                  </svg>
+                                            </div>
+                                            <div class="col-10 text-center px-0 fw-bold fs-5 d-none d-lg-block">
+                                                Actualizar Usuario
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    
+
+                </div>
+
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row p-1 m-1">
+                                <div class="col">
+                                    <button class="btn btn-outline-info  w-100 my-1">
+                                        <div class="row align-items-center">
+                                            <div class="col-2 px-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-search-heart-fill" viewBox="0 0 16 16">
+                                                    <path d="M6.5 13a6.474 6.474 0 0 0 3.845-1.258h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.008 1.008 0 0 0-.115-.1A6.471 6.471 0 0 0 13 6.5 6.502 6.502 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13Zm0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
+                                                  </svg>
+                                            </div>
+                                            <div class="col-10 text-center fw-bold d-none fs-5 d-lg-block">
+                                                Buscar Usuario
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row p-1 m-1">
+                                <div class="col">
+                                    <button class="btn btn-outline-danger  w-100 my-1">
+                                        <div class="row align-items-center">
+                                            <div class="col-2 px-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+                                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                                  </svg>
+                                            </div>
+                                            <div class="col-10 text-center d-none d-lg-block">
+                                                Borrar Usuario
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    
+
+                </div>
+                
+            </div>
+
+        </div>
+        
+
+        <div class="row  table ">
+            
+
+         <!-- data table -->
+
+            <div class="container px-5 ms-4 mt-2 border border-3 border-secondary mb-2 bg-light  rounded-3 align-content-lg-start" >
+
+                <table id="example" class="table table-striped display responsive nowrap " style=" width:100%" >
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>cargo</th>
+                            <th>Sucursal</th>
+                            <th>Edad</th>
+                            <th>Fecha inicio</th>
+                            <th>Salario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011-04-25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011-07-25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009-01-12</td>
+                            <td>$86,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012-03-29</td>
+                            <td>$433,060</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>2008-11-28</td>
+                            <td>$162,700</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012-12-02</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012-08-06</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010-10-14</td>
+                            <td>$327,900</td>
+                        </tr>
+                        <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>2009-09-15</td>
+                            <td>$205,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>2008-12-13</td>
+                            <td>$103,600</td>
+                        </tr>
+                        <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>30</td>
+                            <td>2008-12-19</td>
+                            <td>$90,560</td>
+                        </tr>
+                        <tr>
+                            <td>Quinn Flynn</td>
+                            <td>Support Lead</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2013-03-03</td>
+                            <td>$342,000</td>
+                        </tr>
+                        <tr>
+                            <td>Charde Marshall</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>36</td>
+                            <td>2008-10-16</td>
+                            <td>$470,600</td>
+                        </tr>
+                        <tr>
+                            <td>Haley Kennedy</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>43</td>
+                            <td>2012-12-18</td>
+                            <td>$313,500</td>
+                        </tr>
+                        <tr>
+                            <td>Tatyana Fitzpatrick</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>19</td>
+                            <td>2010-03-17</td>
+                            <td>$385,750</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Silva</td>
+                            <td>Marketing Designer</td>
+                            <td>London</td>
+                            <td>66</td>
+                            <td>2012-11-27</td>
+                            <td>$198,500</td>
+                        </tr>
+                        <tr>
+                            <td>Paul Byrd</td>
+                            <td>Chief Financial Officer (CFO)</td>
+                            <td>New York</td>
+                            <td>64</td>
+                            <td>2010-06-09</td>
+                            <td>$725,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gloria Little</td>
+                            <td>Systems Administrator</td>
+                            <td>New York</td>
+                            <td>59</td>
+                            <td>2009-04-10</td>
+                            <td>$237,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bradley Greer</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>41</td>
+                            <td>2012-10-13</td>
+                            <td>$132,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dai Rios</td>
+                            <td>Personnel Lead</td>
+                            <td>Edinburgh</td>
+                            <td>35</td>
+                            <td>2012-09-26</td>
+                            <td>$217,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jenette Caldwell</td>
+                            <td>Development Lead</td>
+                            <td>New York</td>
+                            <td>30</td>
+                            <td>2011-09-03</td>
+                            <td>$345,000</td>
+                        </tr>
+                        <tr>
+                            <td>Yuri Berry</td>
+                            <td>Chief Marketing Officer (CMO)</td>
+                            <td>New York</td>
+                            <td>40</td>
+                            <td>2009-06-25</td>
+                            <td>$675,000</td>
+                        </tr>
+                        <tr>
+                            <td>Caesar Vance</td>
+                            <td>Pre-Sales Support</td>
+                            <td>New York</td>
+                            <td>21</td>
+                            <td>2011-12-12</td>
+                            <td>$106,450</td>
+                        </tr>
+                        <tr>
+                            <td>Doris Wilder</td>
+                            <td>Sales Assistant</td>
+                            <td>Sydney</td>
+                            <td>23</td>
+                            <td>2010-09-20</td>
+                            <td>$85,600</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Ramos</td>
+                            <td>Chief Executive Officer (CEO)</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>2009-10-09</td>
+                            <td>$1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Joyce</td>
+                            <td>Developer</td>
+                            <td>Edinburgh</td>
+                            <td>42</td>
+                            <td>2010-12-22</td>
+                            <td>$92,575</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Chang</td>
+                            <td>Regional Director</td>
+                            <td>Singapore</td>
+                            <td>28</td>
+                            <td>2010-11-14</td>
+                            <td>$357,650</td>
+                        </tr>
+                        <tr>
+                            <td>Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>2011-06-07</td>
+                            <td>$206,850</td>
+                        </tr>
+                        <tr>
+                            <td>Fiona Green</td>
+                            <td>Chief Operating Officer (COO)</td>
+                            <td>San Francisco</td>
+                            <td>48</td>
+                            <td>2010-03-11</td>
+                            <td>$850,000</td>
+                        </tr>
+                        <tr>
+                            <td>Shou Itou</td>
+                            <td>Regional Marketing</td>
+                            <td>Tokyo</td>
+                            <td>20</td>
+                            <td>2011-08-14</td>
+                            <td>$163,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michelle House</td>
+                            <td>Integration Specialist</td>
+                            <td>Sydney</td>
+                            <td>37</td>
+                            <td>2011-06-02</td>
+                            <td>$95,400</td>
+                        </tr>
+                        <tr>
+                            <td>Suki Burks</td>
+                            <td>Developer</td>
+                            <td>London</td>
+                            <td>53</td>
+                            <td>2009-10-22</td>
+                            <td>$114,500</td>
+                        </tr>
+                        <tr>
+                            <td>Prescott Bartlett</td>
+                            <td>Technical Author</td>
+                            <td>London</td>
+                            <td>27</td>
+                            <td>2011-05-07</td>
+                            <td>$145,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Cortez</td>
+                            <td>Team Leader</td>
+                            <td>San Francisco</td>
+                            <td>22</td>
+                            <td>2008-10-26</td>
+                            <td>$235,500</td>
+                        </tr>
+                        <tr>
+                            <td>Martena Mccray</td>
+                            <td>Post-Sales support</td>
+                            <td>Edinburgh</td>
+                            <td>46</td>
+                            <td>2011-03-09</td>
+                            <td>$324,050</td>
+                        </tr>
+                        <tr>
+                            <td>Unity Butler</td>
+                            <td>Marketing Designer</td>
+                            <td>San Francisco</td>
+                            <td>47</td>
+                            <td>2009-12-09</td>
+                            <td>$85,675</td>
+                        </tr>
+                        <tr>
+                            <td>Howard Hatfield</td>
+                            <td>Office Manager</td>
+                            <td>San Francisco</td>
+                            <td>51</td>
+                            <td>2008-12-16</td>
+                            <td>$164,500</td>
+                        </tr>
+                        <tr>
+                            <td>Hope Fuentes</td>
+                            <td>Secretary</td>
+                            <td>San Francisco</td>
+                            <td>41</td>
+                            <td>2010-02-12</td>
+                            <td>$109,850</td>
+                        </tr>
+                        <tr>
+                            <td>Vivian Harrell</td>
+                            <td>Financial Controller</td>
+                            <td>San Francisco</td>
+                            <td>62</td>
+                            <td>2009-02-14</td>
+                            <td>$452,500</td>
+                        </tr>
+                        <tr>
+                            <td>Timothy Mooney</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>37</td>
+                            <td>2008-12-11</td>
+                            <td>$136,200</td>
+                        </tr>
+                        <tr>
+                            <td>Jackson Bradshaw</td>
+                            <td>Director</td>
+                            <td>New York</td>
+                            <td>65</td>
+                            <td>2008-09-26</td>
+                            <td>$645,750</td>
+                        </tr>
+                        <tr>
+                            <td>Olivia Liang</td>
+                            <td>Support Engineer</td>
+                            <td>Singapore</td>
+                            <td>64</td>
+                            <td>2011-02-03</td>
+                            <td>$234,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bruno Nash</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>38</td>
+                            <td>2011-05-03</td>
+                            <td>$163,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sakura Yamamoto</td>
+                            <td>Support Engineer</td>
+                            <td>Tokyo</td>
+                            <td>37</td>
+                            <td>2009-08-19</td>
+                            <td>$139,575</td>
+                        </tr>
+                        <tr>
+                            <td>Thor Walton</td>
+                            <td>Developer</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2013-08-11</td>
+                            <td>$98,540</td>
+                        </tr>
+                        <tr>
+                            <td>Finn Camacho</td>
+                            <td>Support Engineer</td>
+                            <td>San Francisco</td>
+                            <td>47</td>
+                            <td>2009-07-07</td>
+                            <td>$87,500</td>
+                        </tr>
+                        <tr>
+                            <td>Serge Baldwin</td>
+                            <td>Data Coordinator</td>
+                            <td>Singapore</td>
+                            <td>64</td>
+                            <td>2012-04-09</td>
+                            <td>$138,575</td>
+                        </tr>
+                        <tr>
+                            <td>Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td>63</td>
+                            <td>2010-01-04</td>
+                            <td>$125,250</td>
+                        </tr>
+                        <tr>
+                            <td>Zorita Serrano</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>56</td>
+                            <td>2012-06-01</td>
+                            <td>$115,000</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Acosta</td>
+                            <td>Junior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>43</td>
+                            <td>2013-02-01</td>
+                            <td>$75,650</td>
+                        </tr>
+                        <tr>
+                            <td>Cara Stevens</td>
+                            <td>Sales Assistant</td>
+                            <td>New York</td>
+                            <td>46</td>
+                            <td>2011-12-06</td>
+                            <td>$145,600</td>
+                        </tr>
+                        <tr>
+                            <td>Hermione Butler</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>2011-03-21</td>
+                            <td>$356,250</td>
+                        </tr>
+                        <tr>
+                            <td>Lael Greer</td>
+                            <td>Systems Administrator</td>
+                            <td>London</td>
+                            <td>21</td>
+                            <td>2009-02-27</td>
+                            <td>$103,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jonas Alexander</td>
+                            <td>Developer</td>
+                            <td>San Francisco</td>
+                            <td>30</td>
+                            <td>2010-07-14</td>
+                            <td>$86,500</td>
+                        </tr>
+                        <tr>
+                            <td>Shad Decker</td>
+                            <td>Regional Director</td>
+                            <td>Edinburgh</td>
+                            <td>51</td>
+                            <td>2008-11-13</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Bruce</td>
+                            <td>Javascript Developer</td>
+                            <td>Singapore</td>
+                            <td>29</td>
+                            <td>2011-06-27</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Snider</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
+                            <td>27</td>
+                            <td>2011-01-25</td>
+                            <td>$112,000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
+                </table>
+        
+            
+        </div>
+        
+        
+    </div>
+</div>
+<!-- anuncios -->
+<div class="row  mt-5 ms-5 me-0 d-none d-lg-flex">
+    <div class="col-12 mt-5">
+
+        <div class=" g-4 m-3 ms-3 mb-5 mt-5 container  pb-3  " style="width: 18rem; border-radius: 40px;"></div>
+
+        <div class="card text-start g-4 m-3 ms-3 mb-3 mt-5 container shadow pb-3  " style="width: 18rem; border-radius: 40px;">
+            <div class="card-body pe-auto mt-2 pb-0"  >
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm text-center mb-2 text-uppercase fw-light ">
+                                Colaboradores
+                            </p>
+                            <h5 class="text-sm mb-0 text-uppercase fw-bolder text-center m-2" >Los + Top</h5>
+
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="col-4 m-auto text-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-envelope-paper-heart" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z"/>
+                          </svg>
+    
+                    </div>
+                </div>
+                <div class="row p-1 m-1 mt-1">
+                    <div class="col">
+                        <button class="btn btn-outline-secondary  w-100 my-1">
+                            <div class="row align-items-center">
+                                <div class="col-2 px-2 w-25 m-auto">
+                                    <img src="img/MAX2 (1).png " class="d-block w-100 img-fluid" alt="perfil">
+                                </div>
+                                <div class="col-9 text-center d-none d-lg-block">
+                                    Juan Médez
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row p-1 m-1 mt-1">
+                    <div class="col">
+                        <button class="btn btn-outline-secondary  w-100 my-1">
+                            <div class="row align-items-center">
+                                <div class="col-2 px-2 w-25 m-auto">
+                                    <img src="img/MAX2 (1).png " class="d-block w-100 img-fluid" alt="perfil">
+                                </div>
+                                <div class="col-9 text-center d-none d-lg-block">
+                                    María Torres
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row p-1 m-1 mt-1">
+                    <div class="col">
+                        <button class="btn btn-outline-secondary  w-100 my-1">
+                            <div class="row align-items-center">
+                                <div class="col-2 px-2 w-25 m-auto">
+                                    <img src="img/MAX2 (1).png " class="d-block w-100 img-fluid" alt="perfil">
+                                </div>
+                                <div class="col-9 text-center d-none d-lg-block">
+                                    José Pérez
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="card text-start g-2 m-3 mb-3 ms-3 pb-2 shadow" style="width: 18rem; border-radius: 40px;">
+                <div class="card-body pe-auto mt-2 pb-2"  >
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers ">
+                                <p class="text-sm text-center mb-2  text-uppercase fw-bold ">
+                                    Productos registrados
+                                </p>
+                                <h5 class="text-sm mb-0 text-uppercase fw-bolder text-center m-2" >302</h5>
+                                <p class="text-sm text-center mb-0  fw-light ">
+                                    <span class="text-success fw-bold">+4%</span> más que ayer!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 m-auto text-warning">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                                <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
+                              </svg>
+        
+                        </div>
+                    </div>
+                  
+                  
+                </div>
+        </div>
+
+                <div class="card text-start g-1 m-3 mt-3 pb-2 shadow" style="width: 18rem; border-radius: 40px;">
+                    <div class="card-body pe-auto mt-2 pb-2"  >
+                        <div class="row ">
+                            <div class="col-8">
+                                <div class="numbers ">
+                                    <p class="text-sm text-center mb-2  text-uppercase fw-bold ">
+                                        Clientes Hoy
+                                    </p>
+                                    <h5 class="text-sm mb-0 text-uppercase fw-bolder text-center m-2" >40</h5>
+                                    <p class="text-sm text-center mb-0  fw-light ">
+                                        <span class="text-danger fw-bold">-1%</span> menos que ayer!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4 m-auto text-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-heart" viewBox="0 0 16 16">
+                                    <path d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z"/>
+                                  </svg>
+            
+                            </div>
+                        </div>
+                      
+                      
+                    </div>
+                    </div>
+        
+        
+    </div>
+    
+    
+    
+</div>
+
+
+   
+
+    
+
+
+ 
+
+    
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    $('#example').DataTable();
+});
+    </script>
+    
+    
+</body>
+
+</html>
